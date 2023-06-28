@@ -1,0 +1,23 @@
+<p>home works!</p>
+<li class="nav-item">  
+    <a class="nav-link" [routerLink]="['/un-auth/login']" (click)="logout()">  
+      <p> {{'Chiyoda' | translate}}</p>
+ 
+    </a>
+    
+    <div>
+      <button (click)="change('jp')">Change Language</button>
+    </div>
+ </li>
+
+ <div *ngFor="let message of messageList">
+  <li>
+      {{message}}
+  </li>
+</div>
+
+<input
+  [(ngModel)]="newMessage"
+  (keyup)="$event.keyCode == 13 && sendMessage()"
+/>
+<button (click)="sendMessage()">Send Message</button>
